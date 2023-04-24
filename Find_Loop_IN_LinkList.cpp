@@ -88,6 +88,44 @@ Node* startingPointOfLoop(Node* &head){
 }
 
 
+Node* removeLoop(Node* &head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+     while(fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+            slow = slow->next;
+
+        }
+         // step 1 : slow aur fast ko meet karwaya.
+        if(fast == slow ){
+            //step:2
+            slow = head;
+            break;
+            
+        }
+     }
+      // jab tak slow aur fast mil nhi jata.
+      Node* prev = fast;
+     while(slow != fast){
+        // 1 -1 step aage badaya
+        prev = fast;
+        slow = slow->next;
+        fast = fast->next;
+     }
+
+     prev->next = NULL;
+   //  return slow;
+
+   
+}
+
 
 int main(){
 
@@ -113,18 +151,22 @@ int main(){
 
      //->check loop is present in LinkList
 
-    // if(checkForLoop(head)){
-    //     cout<< "Loop is present"<<endl;
-    // }
-    // else{
-    //     cout<<"Loop is not present"<<endl;
-    // }
+    if(checkForLoop(head)){
+        cout<< "Loop is present"<<endl;
+    }
+    else{
+        cout<<"Loop is not present"<<endl;
+    }
 
-    //Print(head);
+   // Print(head);
 
 
      // starting point of loop
-    cout<< startingPointOfLoop(head)->data <<endl; 
+    cout<< "Starting point of loop is: "<<startingPointOfLoop(head)->data <<endl; 
+
+    // remove loop
+    removeLoop(head);
+    Print(head);
 
     return 0;
 }
