@@ -43,9 +43,9 @@ Node* getMiddle(Node* &head){
      //create a slow and fast pointer
 
      Node* slow = head;
-     //Node* fast = head;
+     Node* fast = head;
      // if you want to print middle 30 in LinkList
-     Node* fast = head->next;
+    // Node* fast = head->next;
 
      while(slow != NULL && fast != NULL ){
         // 1 step move
