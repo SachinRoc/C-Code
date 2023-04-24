@@ -53,6 +53,41 @@ bool checkForLoop(Node* &head){
 
 }
 
+Node* startingPointOfLoop(Node* &head){
+    if(head == NULL){
+        return NULL;
+    }
+
+    Node* slow = head;
+    Node* fast = head;
+
+     while(fast != NULL){
+        fast = fast->next;
+        if(fast != NULL){
+            fast = fast->next;
+            slow = slow->next;
+
+        }
+         // step 1 : slow aur fast ko meet karwaya.
+        if(fast == slow ){
+            //step:2
+            slow = head;
+            break;
+            
+        }
+     }
+      // jab tak slow aur fast mil nhi jata.
+     while(slow != fast){
+        // 1 -1 step aage badaya
+        slow = slow->next;
+        fast = fast->next;
+     }
+     return slow;
+
+   
+}
+
+
 
 int main(){
 
@@ -88,8 +123,8 @@ int main(){
     //Print(head);
 
 
-     
-
+     // starting point of loop
+    cout<< startingPointOfLoop(head)->data <<endl; 
 
     return 0;
 }
