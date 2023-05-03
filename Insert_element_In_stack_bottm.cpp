@@ -24,12 +24,13 @@ void InsertAtBottom(stack<int>&st , int &target){
 
 int main(){
 
-stack<int> st;
-st.push(10);
-st.push(20);
-st.push(30);
-st.push(40);
-st.push(50);
+stack<int>st;
+st.push(100);
+st.push(200);
+st.push(300);
+st.push(400);
+st.push(500);
+st.push(600);
 
 if(st.empty()){
     cout<<"you can not insert at bootom in stack because stack is empty"<<endl;
@@ -45,11 +46,11 @@ InsertAtBottom(st , target);
 
 cout<<"after insert bottom"<<endl;
 cout<<endl;
-
 while(!st.empty()){
-    cout<< st.top() <<" ";
+    cout<< st.top() << endl;
     st.pop();
 }
+
 
     return 0;
 }

@@ -69,7 +69,7 @@ int main(){
     Node* sixth = new Node(60);
 
     head->next = second;
-    second->next = third;
+    second->next = third; 
     third->next  =  fourth;
     fourth->next = fifth;
     fifth->next  = sixth;
