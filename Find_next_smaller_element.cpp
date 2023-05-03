@@ -65,7 +65,7 @@ vector<int> prev = priviousSmallerElement(input, n);
 cout<< " previous smaller element " << endl;
 
 for( int i = 0 ; i<prev.size(); i++){
-    cout<< ans[i] << " ";
+    cout<< prev[i] << " ";
 }
 
 
